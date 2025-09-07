@@ -3,94 +3,123 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark">
-  <title>ColumnFlow – Privacy Policy</title>
+  <title>ColumnFlow — Privacy Policy & Beta EULA</title>
   <style>
     :root {
-      --bg: #fff;
-      --fg: #0b1220;
-      --muted: #58606e;
-      --card: #f6f8fb;
-      --border: #e3e8ef;
-      --accent: #2563eb;
-      --accent-contrast: #ffffff;
+      --bg: #0f1220;
+      --card: #151935;
+      --text: #eef2ff;
+      --muted: #c7c9d9;
+      --accent: #7aa2ff;
+      --accent-2: #a7f3d0;
+      --border: #2a2f55;
+      --link: #9ab4ff;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1220;
-        --fg: #e6e8ee;
-        --muted: #a3a8b3;
-        --card: #111827;
-        --border: #253045;
-        --accent: #3b82f6;
-        --accent-contrast: #0b1220;
-      }
-    }
-    html, body { height: 100%; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
       line-height: 1.6;
-      background: var(--bg);
-      color: var(--fg);
+      color: var(--text);
+      background: radial-gradient(1000px 600px at 20% -10%, #1a1f45 0%, #0f1220 60%) no-repeat, var(--bg);
+      padding: 32px 16px 80px;
     }
-    .wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px 64px; }
-    header h1 { font-size: clamp(28px, 4.5vw, 40px); margin: 0.1rem 0 0.5rem; }
-    header .meta { color: var(--muted); font-size: 0.975rem; }
-    .cta {
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      margin: 18px 0 26px;
-      padding: 16px 18px;
-      font-weight: 700;
-      font-size: clamp(16px, 2.8vw, 20px);
-      color: var(--accent-contrast);
-      background: linear-gradient(92deg, var(--accent) 0%, #22c55e 100%);
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    .container { max-width: 900px; margin: 0 auto; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
     }
-    .cta:focus-visible { outline: 3px solid #94a3b8; outline-offset: 3px; }
-    .card {
-      background: var(--card);
+    h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin: 0; letter-spacing: 0.3px;
+      background: linear-gradient(90deg, var(--text), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 18px;
-      margin: 16px 0;
+      border-radius: 16px; padding: 16px;
+      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
     }
-    h2 { font-size: 1.35rem; margin-top: 1.8rem; }
-    h3 { font-size: 1.05rem; margin-top: 1.2rem; color: var(--muted); }
-    ul { padding-left: 1.1rem; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    a { color: var(--accent); }
-    hr { border: none; height: 1px; background: var(--border); margin: 24px 0; }
-    .footer { color: var(--muted); font-size: 0.9rem; margin-top: 28px; }
-    .chip {
-      display: inline-block; padding: 2px 8px; border-radius: 999px;
-      background: var(--border); color: var(--muted); font-size: 0.8rem; vertical-align: middle;
+    .big-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; padding: 14px 18px; border-radius: 12px;
+      background: linear-gradient(180deg, #2b3a7a, #1e2a60);
+      color: white; text-decoration: none; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 30px rgba(50,100,255,0.25);
+      transition: transform 0.08s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      white-space: nowrap;
     }
+    .big-link:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(50,100,255,0.33); opacity: 0.95; }
+    .cards { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 18px; }
+    @media (min-width: 860px) { .cards { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px;
+    }
+    .card h2 {
+      margin: 0 0 6px 0; font-size: 20px;
+      color: var(--accent-2);
+    }
+    .meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+    nav {
+      margin: 20px 0 28px; display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    nav a {
+      text-decoration: none; color: var(--link); font-weight: 600;
+      border: 1px solid var(--border); padding: 8px 12px;
+      border-radius: 999px; background: rgba(255,255,255,0.02);
+    }
+    section {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border-radius: 16px; padding: 22px; margin-bottom: 18px;
+    }
+    h3 { margin-top: 18px; color: var(--accent); }
+    ul { margin: 8px 0 8px 24px; }
+    a { color: var(--link); }
+    .back-top { display: inline-block; margin-top: 16px; font-size: 14px; opacity: 0.95; }
+    footer { margin-top: 40px; color: var(--muted); font-size: 13px; text-align: center; }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <a id="top"></a>
+  <div class="container">
     <header>
-      <h1>ColumnFlow – Privacy Policy</h1>
-      <div class="meta">
-        <span class="chip">Effective date: September 7, 2025</span>
-        &nbsp; • &nbsp; Contact: <a href="mailto:lee.manolis@gmail.com">lee.manolis@gmail.com</a>
-      </div>
+      <h1>ColumnFlow — Privacy & Beta EULA</h1>
+      <a class="big-link" href="https://github.com/leemanolis/ColumnFlow/discussions" target="_blank" rel="noopener">
+        🗣️ Join Discussions
+      </a>
     </header>
 
-    <!-- BIG TOP LINK TO GITHUB DISCUSSIONS -->
-    <a class="cta" href="https://github.com/leemanolis/ColumnFlow/discussions" target="_blank" rel="noopener noreferrer"
-       aria-label="Open ColumnFlow Support & Feedback forum on GitHub Discussions in a new tab">
-      💬 Support & Feedback Forum →
-    </a>
+    <div class="hero">
+      <div style="flex:1; min-width: 240px;">
+        <strong>Contact:</strong>
+        <a href="mailto:lee.manolis@gmail.com">lee.manolis@gmail.com</a><br/>
+        <strong>Effective date:</strong> September 7, 2025
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="big-link" href="#privacy">Privacy Policy</a>
+        <a class="big-link" href="#eula">Beta EULA</a>
+      </div>
+    </div>
 
-    <p>ColumnFlow is a personal finance app that helps you project monthly cash flow across iPhone, iPad, and Mac. We designed it to keep your data private: your budget lives on your devices and (optionally) in your iCloud account—not on our servers.</p>
+    <nav>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#eula">Beta EULA</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="card">
-      <h2>Summary (the short version)</h2>
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p><em>Effective date: September 7, 2025</em><br/>
+      <strong>Contact:</strong> <a href="mailto:lee.manolis@gmail.com">lee.manolis@gmail.com</a></p>
+
+      <p>ColumnFlow is a personal finance app that helps you project monthly cash flow across iPhone, iPad, and Mac. We designed it to keep your data private: your budget lives on your devices and (optionally) in your iCloud account&mdash;not on our servers.</p>
+
+      <h3>Summary (the short version)</h3>
       <ul>
         <li>No ads. No tracking. No third-party analytics SDKs.</li>
         <li>We don’t run our own servers. Data sync uses Apple’s CloudKit in your iCloud private database.</li>
@@ -98,124 +127,133 @@
         <li>Optional file access is only used when you import/export CSV files via the system file picker.</li>
         <li>You can delete all iCloud data from inside the app at any time.</li>
       </ul>
-    </div>
 
-    <h2>What data the app handles</h2>
+      <h3>What data the app handles</h3>
+      <p><strong>Budget data (you enter)</strong><br/>
+      <em>What:</em> months, starting/ending balances, line items (label, amount, date, projected flag), currency code.<br/>
+      <em>Where:</em> stored locally on device and, if iCloud is enabled, in your iCloud private database (CloudKit).<br/>
+      <em>Why:</em> to provide the app’s core functionality (budget projection).</p>
 
-    <h3>Budget data (you enter)</h3>
-    <ul>
-      <li><strong>What:</strong> months, starting/ending balances, line items (label, amount, date, projected flag), currency code.</li>
-      <li><strong>Where:</strong> stored locally on device and, if iCloud is enabled, in your iCloud private database (CloudKit).</li>
-      <li><strong>Why:</strong> to provide the app’s core functionality (budget projection).</li>
-    </ul>
+      <p><strong>Calendar data (optional)</strong><br/>
+      <em>What:</em> when you use “Add Items to Calendar,” the app creates/updates all-day events in a dedicated “ColumnFlow” calendar with the item’s title and an amount summary in the notes.<br/>
+      <em>Where:</em> saved in your device’s Calendar via EventKit. A small local mapping file (UUID ↔︎ event ID) is stored in the app’s documents folder to keep events in sync.<br/>
+      <em>Why:</em> so projected items can appear on your calendar.<br/>
+      <em>Control:</em> turn off at any time; removing the “Projected” flag or running the update will remove linked events.</p>
 
-    <h3>Calendar data (optional)</h3>
-    <ul>
-      <li><strong>What:</strong> when you use “Add Items to Calendar,” the app creates/updates all-day events in a dedicated “ColumnFlow” calendar with the item’s title and an amount summary in the notes.</li>
-      <li><strong>Where:</strong> saved in your device’s Calendar via EventKit. A small local mapping file (UUID ↔︎ event ID) is stored in the app’s documents folder to keep events in sync.</li>
-      <li><strong>Why:</strong> so projected items can appear on your calendar.</li>
-      <li><strong>Control:</strong> turn off at any time; removing the “Projected” flag or running the update will remove linked events.</li>
-    </ul>
+      <p><strong>Files (optional)</strong><br/>
+      <em>What:</em> CSV import/export of months and items.<br/>
+      <em>Where:</em> handled locally using the system file picker; exported files are saved to a location you choose.<br/>
+      <em>Why:</em> to let you back up, move, or edit data outside the app.</p>
 
-    <h3>Files (optional)</h3>
-    <ul>
-      <li><strong>What:</strong> CSV import/export of months and items.</li>
-      <li><strong>Where:</strong> handled locally using the system file picker; exported files are saved to a location you choose.</li>
-      <li><strong>Why:</strong> to let you back up, move, or edit data outside the app.</li>
-    </ul>
+      <p><strong>CloudKit notifications</strong><br/>
+      <em>What:</em> the app registers for silent (content-available) remote notifications so CloudKit can nudge the app to pull changes.<br/>
+      <em>Where:</em> delivered by Apple. No marketing notifications.<br/>
+      <em>Why:</em> faster, near-real-time sync.<br/>
+      <em>Control:</em> you can disable notifications in system settings; sync still works, just less instantly.</p>
 
-    <h3>CloudKit notifications</h3>
-    <ul>
-      <li><strong>What:</strong> the app registers for silent (content-available) remote notifications so CloudKit can nudge the app to pull changes.</li>
-      <li><strong>Where:</strong> delivered by Apple. No marketing notifications.</li>
-      <li><strong>Why:</strong> faster, near-real-time sync.</li>
-      <li><strong>Control:</strong> you can disable notifications in system settings; sync still works, just less instantly.</li>
-    </ul>
+      <p><strong>Diagnostics</strong><br/>
+      <em>In-app log:</em> a lightweight, on-device event list (e.g., “Pushed to CloudKit”).<br/>
+      <em>System crash reports (optional):</em> If you’ve opted in to share diagnostics with developers via Apple, we may receive aggregated crash reports tied to Apple’s identifiers, not to your identity.</p>
 
-    <h3>Diagnostics</h3>
-    <ul>
-      <li><strong>In-app log:</strong> a lightweight, on-device event list (e.g., “Pushed to CloudKit”).</li>
-      <li><strong>System crash reports (optional):</strong> If you’ve opted in to share diagnostics with developers via Apple, we may receive aggregated crash reports tied to Apple’s identifiers, not to your identity.</li>
-    </ul>
-
-    <hr />
-
-    <h2>What we do not collect or do</h2>
-    <ul>
-      <li>We do not track you across apps or websites.</li>
-      <li>We do not sell, rent, or share your data with third parties.</li>
-      <li>We do not use advertising SDKs or third-party analytics SDKs.</li>
-      <li>We do not request location, contacts, microphone, photos, or Bluetooth.</li>
-    </ul>
-
-    <hr />
-
-    <h2>Legal bases (GDPR/EEA)</h2>
-    <ul>
-      <li><strong>Performance of a contract / App functionality:</strong> processing your budget data to run the app.</li>
-      <li><strong>Consent:</strong> Calendar and Files access only after you grant permissions.</li>
-      <li><strong>Legitimate interests:</strong> receiving anonymized crash reports (if you opted in with Apple) to improve stability.</li>
-    </ul>
-    <p>You may have rights to access, correct, export, or delete your data. Contact us at <a href="mailto:lee.manolis@gmail.com">lee.manolis@gmail.com</a> for help.</p>
-
-    <hr />
-
-    <h2>Security</h2>
-    <ul>
-      <li>Apple’s CloudKit encrypts data in transit and at rest within your iCloud account.</li>
-      <li>Local storage is protected by your device’s security (passcode, Face/Touch ID, and data protection).</li>
-      <li>No internet transmission is perfectly secure; we rely on Apple’s infrastructure and best practices.</li>
-    </ul>
-
-    <hr />
-
-    <h2>Data retention &amp; your controls</h2>
-    <ul>
-      <li><strong>On device:</strong> kept until you delete the app or use the in-app controls.</li>
-      <li><strong>In iCloud:</strong> kept until you remove it.</li>
-      <li><strong>Your controls:</strong></li>
-    </ul>
-    <ul>
-      <li>In the app: <em>Help → Maintenance → Delete all iCloud data</em> to remove the CloudKit record.</li>
-      <li>Delete the app to remove local data.</li>
-      <li>Disable iCloud for the app in system settings if you prefer local-only.</li>
-    </ul>
-
-    <hr />
-
-    <h2>Children’s privacy</h2>
-    <p>ColumnFlow is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
-
-    <hr />
-
-    <h2>International transfers</h2>
-    <p>iCloud is operated by Apple and may store/process data in data centers outside your country. Apple’s safeguards and policies apply to CloudKit storage.</p>
-
-    <hr />
-
-    <h2>Changes to this policy</h2>
-    <p>We may update this policy as the app evolves. We’ll change the “Effective date” above and, where appropriate, notify you in-app or on our site.</p>
-
-    <hr />
-
-    <h2>Contact</h2>
-    <p>Questions or privacy requests?<br />
-      <a href="mailto:lee.manolis@gmail.com">lee.manolis@gmail.com</a>
-    </p>
-
-    <hr />
-
-    <div class="card">
-      <h2>App Store Privacy Summary (helper)</h2>
+      <h3>What we do not collect or do</h3>
       <ul>
-        <li><strong>Data Collected:</strong> None (no analytics/tracking).</li>
-        <li><strong>Data Linked to You:</strong> None by the developer (budget data stays on device/iCloud).</li>
-        <li><strong>Optional Access:</strong> Calendars (user-initiated), Files (user-initiated).</li>
-        <li><strong>Tracking:</strong> No.</li>
+        <li>We do not track you across apps or websites.</li>
+        <li>We do not sell, rent, or share your data with third parties.</li>
+        <li>We do not use advertising SDKs or third-party analytics SDKs.</li>
+        <li>We do not request location, contacts, microphone, photos, or Bluetooth.</li>
       </ul>
-    </div>
 
-    <p class="footer">© 2025 ColumnFlow. All rights reserved.</p>
+      <h3>Legal bases (GDPR/EEA)</h3>
+      <ul>
+        <li><strong>Performance of a contract / App functionality:</strong> processing your budget data to run the app.</li>
+        <li><strong>Consent:</strong> Calendar and Files access only after you grant permissions.</li>
+        <li><strong>Legitimate interests:</strong> receiving anonymized crash reports (if you opted in with Apple) to improve stability.</li>
+      </ul>
+      <p>You may have rights to access, correct, export, or delete your data. Contact us at <a href="mailto:lee.manolis@gmail.com">lee.manolis@gmail.com</a> for help.</p>
+
+      <h3>Security</h3>
+      <ul>
+        <li>Apple’s CloudKit encrypts data in transit and at rest within your iCloud account.</li>
+        <li>Local storage is protected by your device’s security (passcode, Face/Touch ID, and data protection).</li>
+        <li>No internet transmission is perfectly secure; we rely on Apple’s infrastructure and best practices.</li>
+      </ul>
+
+      <h3>Data retention & your controls</h3>
+      <ul>
+        <li><strong>On device:</strong> kept until you delete the app or use the in-app controls.</li>
+        <li><strong>In iCloud:</strong> kept until you remove it.</li>
+        <li><strong>Your controls:</strong>
+          <ul>
+            <li>In the app: Help → Maintenance → <em>Delete all iCloud data</em> to remove the CloudKit record.</li>
+            <li>Delete the app to remove local data.</li>
+            <li>Disable iCloud for the app in system settings if you prefer local-only.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Children’s privacy</h3>
+      <p>ColumnFlow is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+
+      <h3>International transfers</h3>
+      <p>iCloud is operated by Apple and may store/process data in data centers outside your country. Apple’s safeguards and policies apply to CloudKit storage.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>We may update this policy as the app evolves. We’ll change the “Effective date” above and, where appropriate, notify you in-app or on our site.</p>
+
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section id="eula">
+      <h2>ColumnFlow Beta End User License Agreement (EULA)</h2>
+      <p><em>Last updated: September 7, 2025</em></p>
+
+      <h3>Summary</h3>
+      <ul>
+        <li>This build is for testing; features may change or break.</li>
+        <li>You keep your content; we keep the app.</li>
+        <li>Provide feedback freely; we may use it to improve ColumnFlow.</li>
+        <li>No warranties; liability is limited as allowed by law.</li>
+      </ul>
+
+      <h3>1. License & Use</h3>
+      <p>We grant you a personal, revocable, non-transferable license to install and use the TestFlight build of ColumnFlow solely for evaluation and feedback during the beta period. You may not distribute, resell, or reverse-engineer the app.</p>
+
+      <h3>2. Eligibility</h3>
+      <p>You must be able to enter a binding agreement and comply with Apple’s TestFlight terms. If you test on an employer-managed device, ensure you have permission.</p>
+
+      <h3>3. Test Data</h3>
+      <p>Use non-sensitive data whenever possible. If you connect iCloud or Calendar, data is stored in your iCloud account and on your devices. You are responsible for maintaining backups as appropriate.</p>
+
+      <h3>4. Feedback</h3>
+      <p>Feedback, bug reports, or suggestions you provide may be used, adapted, or incorporated into ColumnFlow without obligation to you. Do not include confidential information in feedback.</p>
+
+      <h3>5. Privacy</h3>
+      <p>See the <a href="#privacy">Privacy Policy</a>. The beta build includes no advertising or third‑party analytics SDKs. Crash reports may be received via Apple if you have opted in.</p>
+
+      <h3>6. No Warranties</h3>
+      <p>The beta is provided “as is” and “as available,” without warranties of any kind. You assume all risks of using pre-release software.</p>
+
+      <h3>7. Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, or consequential damages, or lost data/profits, arising from or related to your beta use.</p>
+
+      <h3>8. Termination</h3>
+      <p>We may end your access to the beta at any time. You may stop participating by uninstalling the beta build and leaving the TestFlight program.</p>
+
+      <h3>9. Export & Compliance</h3>
+      <p>You agree to comply with applicable laws, including export, import, and sanctions regulations.</p>
+
+      <h3>10. Changes</h3>
+      <p>We may update this EULA as the beta evolves. Continued testing after changes means you accept the updated terms.</p>
+
+      <h3 id="contact">Contact</h3>
+      <p>Questions about this EULA or the beta? Email <a href="mailto:lee.manolis@gmail.com">lee.manolis@gmail.com</a> or post in <a href="https://github.com/leemanolis/ColumnFlow/discussions" target="_blank" rel="noopener">GitHub Discussions</a>.</p>
+
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <footer>
+      © 2025 ColumnFlow. This page covers Privacy Policy and Beta EULA for pre‑release builds.
+    </footer>
   </div>
 </body>
 </html>
